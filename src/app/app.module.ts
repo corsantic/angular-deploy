@@ -1,3 +1,4 @@
+
 import { CategoryService } from './category.service';
 import { ProductService } from './product.service';
 import { AdminAuthGuard } from './admin-auth-guard.service';
@@ -14,6 +15,8 @@ import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import  { FormsModule } from '@angular/forms';
 import { CustomFormsModule} from 'ng2-validation';
+import { DataTableModule } from 'angular-4-data-table';
+
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -51,6 +54,7 @@ import { ProductFormComponent } from './admin/product-form/product-form.componen
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    DataTableModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
       //Anonymous Users
