@@ -1,3 +1,5 @@
+import { CategoryService } from './category.service';
+import { ProductService } from './product.service';
 import { AdminAuthGuard } from './admin-auth-guard.service';
 import { UserService } from './user.service';
 import { AuthGuard } from './auth-guard.service';
@@ -71,7 +73,10 @@ import { LoginComponent } from './login/login.component';
     AuthService,
     AuthGuard,
     AdminAuthGuard,
-    UserService
+    UserService,
+  ProductService,
+  CategoryService
+
   ],
   bootstrap: [AppComponent]
 })
