@@ -24,6 +24,7 @@ import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { LoginComponent } from './login/login.component';
+import { ProductFormComponent } from './admin/product-form/product-form.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { LoginComponent } from './login/login.component';
     MyOrdersComponent,
     AdminProductsComponent,
     AdminOrdersComponent,
-    LoginComponent
+    LoginComponent,
+    ProductFormComponent
   ],
   imports: [
     BrowserModule,
@@ -47,24 +49,34 @@ import { LoginComponent } from './login/login.component';
     AngularFireAuthModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
-//Anonymous Users
-      {path:'',component:HomeComponent},
-      {path:'products',component:ProductsComponent},
-      {path:'shopping-cart',component:ShoppingCartComponent},
-      {path:'login',component:LoginComponent},
-//Normal Users
-      {path:'check-out',component:CheckOutComponent,canActivate:[AuthGuard]},
-      {path:'my/orders',component:MyOrdersComponent,canActivate:[AuthGuard]},
-      {path:'order-success',component:OrderSuccessComponent,canActivate:[AuthGuard]},
-//Admins
-      {path:'admin/products',
-      component:AdminProductsComponent,
-      canActivate:[AuthGuard,AdminAuthGuard]},
+      //Anonymous Users
+      { path: '', component: HomeComponent },
+      { path: 'products', component: ProductsComponent },
+      { path: 'shopping-cart', component: ShoppingCartComponent },
+      { path: 'login', component: LoginComponent },
+      //Normal Users
+      { path: 'check-out', component: CheckOutComponent, canActivate: [AuthGuard] },
+      { path: 'my/orders', component: MyOrdersComponent, canActivate: [AuthGuard] },
+      { path: 'order-success', component: OrderSuccessComponent, canActivate: [AuthGuard] },
+      //Admins
+      {
+        path: 'admin/products',
+        component: AdminProductsComponent,
+        canActivate: [AuthGuard, AdminAuthGuard]
+      },
 
-      
-      {path:'admin/orders',
-      component:AdminOrdersComponent,
-      canActivate:[AuthGuard,AdminAuthGuard]},
+      {
+        path: 'admin/products/new',
+        component: ProductFormComponent,
+        canActivate: [AuthGuard, AdminAuthGuard]
+      },
+
+
+      {
+        path: 'admin/orders',
+        component: AdminOrdersComponent,
+        canActivate: [AuthGuard, AdminAuthGuard]
+      },
 
     ])
 
@@ -74,8 +86,8 @@ import { LoginComponent } from './login/login.component';
     AuthGuard,
     AdminAuthGuard,
     UserService,
-  ProductService,
-  CategoryService
+    ProductService,
+    CategoryService
 
   ],
   bootstrap: [AppComponent]
