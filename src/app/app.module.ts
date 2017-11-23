@@ -1,3 +1,4 @@
+import { ShoppingCartService } from './shopping-card.service';
 import { NgModule } from '@angular/core';
 import { CategoryService } from './category.service';
 import { ProductService } from './product.service';
@@ -105,7 +106,8 @@ import { ProductCardComponent } from './product-card/product-card.component';
     AdminAuthGuard,
     UserService,
     ProductService,
-    CategoryService
+    CategoryService,
+    ShoppingCartService,
 
   ],
   bootstrap: [AppComponent]
