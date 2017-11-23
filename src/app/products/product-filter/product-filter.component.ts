@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './product-filter.component.html',
   styleUrls: ['./product-filter.component.css']
 })
-export class ProductFilterComponent implements OnInit {
+export class ProductFilterComponent {
   categories$;
   @Input('category') category;
 
@@ -14,7 +14,5 @@ export class ProductFilterComponent implements OnInit {
     this.categories$ = categoryService.getAll();
    }
 
-  ngOnInit() {
-  }
 
 }
