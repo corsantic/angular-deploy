@@ -40,9 +40,6 @@ export class CheckOutComponent implements OnInit, OnDestroy {
     this.router.navigate(['/order-success', result.key]);
   }
 
-  
-  
-
   ngOnDestroy() {
     this.cartSubscription.unsubscribe();
     this.userSubscription.unsubscribe();
