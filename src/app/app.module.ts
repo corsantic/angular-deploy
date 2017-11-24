@@ -14,7 +14,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import  { FormsModule } from '@angular/forms';
+import  { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CustomFormsModule} from 'ng2-validation';
 
 
@@ -37,6 +37,7 @@ import { ProductCardComponent } from './product-card/product-card.component';
 import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
 import { OrderService } from './order.service';
 import { ShoppingCartSummaryComponent } from './shopping-cart-summary/shopping-cart-summary.component';
+import { ShippingFormComponent } from './shipping-form/shipping-form.component';
 
 
 @NgModule({
@@ -56,11 +57,13 @@ import { ShoppingCartSummaryComponent } from './shopping-cart-summary/shopping-c
     ProductFilterComponent,
     ProductCardComponent,
     ProductQuantityComponent,
-    ShoppingCartSummaryComponent
+    ShoppingCartSummaryComponent,
+    ShippingFormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     CustomFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
