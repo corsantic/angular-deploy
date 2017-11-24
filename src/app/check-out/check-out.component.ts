@@ -5,6 +5,7 @@ import { ShoppingCartService } from '../shopping-card.service';
 import { ShoppingCart } from '../models/shopping-cart';
 import { Subscription } from 'rxjs/Subscription';
 import { OrderService } from '../order.service';
+import { Order } from '../models/order';
 
 
 @Component({
@@ -31,24 +32,8 @@ export class CheckOutComponent implements OnInit, OnDestroy {
     this.authService.user$.subscribe(user => this.userId = user.uid);
   }
 
-
   placeOrder() {
-    let order = {
-      userId: this.userId,
-      datePlaced: new Date().getTime(),
-      shipping: this.shipping,
-      items: this.cart.items.map(i => {
-        return {
-          product: {
-            title: i.title,
-            imageUrl: i.imageUrl,
-            price: i.price
-          },
-          quantity: i.quantity,
-          totalPrice: i.totalPrice
-        }
-      })
-    };
+    let order = new Order(this.userId,this.shipping,this.cart);
     this.orderService.storeOrder(order);
   }
 
