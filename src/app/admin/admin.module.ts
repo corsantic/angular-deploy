@@ -12,8 +12,6 @@ import { AdminProductsComponent } from './components/admin-products/admin-produc
 
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule,
     SharedModule,
     RouterModule.forChild([
 

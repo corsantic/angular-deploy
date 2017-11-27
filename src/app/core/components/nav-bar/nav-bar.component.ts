@@ -1,9 +1,9 @@
-import { ShoppingCart } from '../shared/models/shopping-cart';
+import { ShoppingCart } from '../../../shared/models/shopping-cart';
 import { async } from '@angular/core/testing';
-import { ShoppingCartService } from '../shared/services/shopping-card.service';
-import { AuthService } from '../shared/services/auth.service';
+import { ShoppingCartService } from '../../../shared/services/shopping-card.service';
+import { AuthService } from '../../../shared/services/auth.service';
 import { Component, OnInit } from '@angular/core';
-import { AppUser } from '../shared/models/app-user';
+import { AppUser } from '../../../shared/models/app-user';
 import { Observable } from 'rxjs/Observable';
 @Component({
   selector: 'nav-bar',
